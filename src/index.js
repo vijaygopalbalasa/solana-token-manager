@@ -5,16 +5,29 @@ import App from './App';
 import './polyfills';
 import ErrorBoundary from './ErrorBoundary';
 
-const root = createRoot(document.getElementById('root'));
+function renderApp() {
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    try {
+      const root = createRoot(rootElement);
+      root.render(
+        <React.StrictMode>
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
+        </React.StrictMode>
+      );
+    } catch (error) {
+      console.error('Error rendering the app:', error);
+    }
+  } else {
+    console.error('Root element not found');
+  }
+}
 
-try {
-  root.render(
-    <React.StrictMode>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
-    </React.StrictMode>
-  );
-} catch (error) {
-  console.error('Error rendering the app:', error);
+// Ensure the DOM is fully loaded before rendering
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderApp);
+} else {
+  renderApp();
 }
