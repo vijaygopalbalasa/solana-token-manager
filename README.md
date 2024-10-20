@@ -22,7 +22,7 @@ A comprehensive web application for creating and managing tokens on the Solana b
 
 1. Clone the repository:
    ```
-   git clone 
+   git clone https://github.com/vijaygopalbalasa/solana-token-manager.git
    cd solana-token-manager
    ```
 
