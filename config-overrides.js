@@ -13,7 +13,8 @@ module.exports = function override(config) {
         "zlib": require.resolve("browserify-zlib"),
         "process": require.resolve("process/browser"),
         "path": require.resolve("path-browserify"),
-        "fs": false
+        "fs": false,
+        "vm": require.resolve("vm-browserify") // Add this line
     };
 
     config.plugins.push(
@@ -29,6 +30,14 @@ module.exports = function override(config) {
             fullySpecified: false
         }
     });
+
+    // Add this section to handle Node.js core modules
+    config.resolve.alias = {
+        ...config.resolve.alias,
+        "path": "path-browserify",
+        "os": "os-browserify/browser",
+        "crypto": "crypto-browserify"
+    };
 
     return config;
 }

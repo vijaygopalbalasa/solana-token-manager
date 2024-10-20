@@ -55,7 +55,8 @@
     "react-app-rewired": "^2.2.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
-    "url": "^0.11.4"
+    "url": "^0.11.4",
+    "vm-browserify": "^1.1.2"
   },
   "resolutions": {
     "axios": "^0.21.4"
