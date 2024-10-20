@@ -5,11 +5,16 @@ import App from './App';
 import './polyfills';
 import ErrorBoundary from './ErrorBoundary';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const root = createRoot(document.getElementById('root'));
+
+try {
+  root.render(
+    <React.StrictMode>
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    </React.StrictMode>
+  );
+} catch (error) {
+  console.error('Error rendering the app:', error);
+}
