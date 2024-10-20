@@ -7,11 +7,10 @@ import { clusterApiUrl } from '@solana/web3.js';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { NotificationProvider } from './contexts/NotificationContext';
 import NFTCollectionManagement from './components/NFTCollectionManagement';
-import TokenCreation from './components/TokenCreation';
 import TokenManager from './components/TokenManager';
 import WalletConnection from './components/WalletConnection';
 import LoadingOverlay from './components/LoadingOverlay';
-import { FaCoins, FaPalette, FaQuestionCircle, FaWallet } from 'react-icons/fa';
+import { FaPalette, FaQuestionCircle, FaWallet } from 'react-icons/fa';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 

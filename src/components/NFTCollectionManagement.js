@@ -187,7 +187,7 @@ function NFTCollectionManagement({ setIsLoading }) {
         } finally {
             setIsLoading(false);
         }
-    }, [wallet, connection, nftMint, collectionMint, addNotification, setIsLoading]);
+    }, [wallet, connection, nftMint, collectionMint, addNotification, setIsLoading, validateNFTMint]);
 
     const TruncatedField = ({ label, value, copyable = true }) => {
         const truncatedValue = value.length > 20 ? `${value.slice(0, 10)}...${value.slice(-10)}` : value;
